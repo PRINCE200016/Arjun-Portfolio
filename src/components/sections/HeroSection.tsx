@@ -16,7 +16,7 @@ const HeroSection = () => {
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4 fade-in-up" style={{ animationDelay: '0.4s' }}>
           <Button asChild size="lg" className="bg-accent text-accent-foreground transition-transform duration-300 hover:scale-105">
-            <Link href="https://drive.google.com/file/d/1a9n5F0QtUjM_Gtko9j7QnxK34AFsuvDD/view?usp=drive_link" target="_blank">
+            <Link href="https://drive.google.com/file/d/185DZ5accSjChJJVNLlV5fLkk85lAnAqg/view?usp=drive_link" target="_blank">
               Download Resume
               <ArrowDown className="ml-2 h-4 w-4" />
             </Link>

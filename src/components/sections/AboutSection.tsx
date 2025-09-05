@@ -11,7 +11,7 @@ const AboutSection = () => {
             <Card className="overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
               <CardContent className="p-0">
                 <Image
-                  src="/images/Profile.jpg"
+                  src="/images/About_img.png"
                   alt="Arjun Rajawat"
                   width={400}
                   height={500}
