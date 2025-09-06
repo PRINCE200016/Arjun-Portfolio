@@ -36,6 +36,12 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Production optimizations
+  compress: true,
+  poweredByHeader: false,
+  generateEtags: false,
+  // API route optimizations
+  serverExternalPackages: [],
 };
 
 export default nextConfig;

@@ -7,6 +7,7 @@ import ProjectsSection from '@/components/sections/ProjectsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/Footer';
 import AnimatedSection from '@/components/AnimatedSection';
+import Chatbot from '@/components/Chatbot';
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
         </AnimatedSection>
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 }
