@@ -5,10 +5,5 @@
       "src": "package.json",
       "use": "@vercel/next"
     }
-  ],
-  "functions": {
-    "src/app/api/chatbot/search/route.ts": {
-      "maxDuration": 10
-    }
-  }
+  ]
 }
