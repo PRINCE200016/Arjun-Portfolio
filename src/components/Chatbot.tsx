@@ -24,18 +24,25 @@ interface ContactInfo {
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: '1',
-      content: `Hi! I'm your personal assistant for Arjun Rajawat. I can tell you about his skills, education, projects, achievements, and background. What would you like to know?`,
-      isUser: false,
-      timestamp: new Date()
-    }
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [contactInfo, setContactInfo] = useState<ContactInfo>({});
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Initialize welcome message client-side to avoid hydration mismatch
+  useEffect(() => {
+    if (messages.length === 0) {
+      setMessages([
+        {
+          id: '1',
+          content: `Hi! I'm your personal assistant for Arjun Rajawat. I can tell you about his skills, education, projects, achievements, and background. What would you like to know?`,
+          isUser: false,
+          timestamp: new Date()
+        }
+      ]);
+    }
+  }, [messages.length]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -279,7 +286,7 @@ const Chatbot = () => {
       {/* Chat Button */}
       <Button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-accent text-accent-foreground shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-accent text-accent-foreground shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
         size="icon"
       >
         <MessageCircle className="h-6 w-6" />
@@ -287,7 +294,7 @@ const Chatbot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 h-[600px] w-[400px] animate-in slide-in-from-bottom-2 duration-300">
+        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 h-[80vh] max-h-[600px] w-[90vw] max-w-[400px] animate-in slide-in-from-bottom-2 duration-300">
           <Card className="flex h-full flex-col shadow-2xl">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 border-b bg-accent/10 p-4">
               <div className="flex items-center space-x-2">
@@ -312,7 +319,7 @@ const Chatbot = () => {
             <CardContent className="flex-1 overflow-hidden p-0">
               <div className="flex h-full flex-col">
                 {/* Messages */}
-                <div className="flex-1 overflow-y-auto p-4 space-y-4">
+                <div className="flex-1 overflow-y-auto p-2 sm:p-4 space-y-3 sm:space-y-4">
                   {messages.map((message) => (
                     <div
                       key={message.id}
@@ -328,7 +335,7 @@ const Chatbot = () => {
                       )}
                       <div
                         className={cn(
-                          "max-w-[80%] rounded-lg px-3 py-2 text-sm",
+                          "max-w-[75%] rounded-lg px-3 py-2 text-sm",
                           message.isUser
                             ? "bg-accent text-accent-foreground"
                             : "bg-muted"
@@ -368,7 +375,7 @@ const Chatbot = () => {
                 </div>
 
                 {/* Input */}
-                <div className="border-t p-4">
+                <div className="border-t p-2 sm:p-4">
                   <div className="flex gap-2">
                     <Input
                       value={inputValue}
@@ -386,21 +393,21 @@ const Chatbot = () => {
                       <Send className="h-4 w-4" />
                     </Button>
                   </div>
-                  <div className="mt-2 flex flex-wrap gap-1">
-                    <Badge variant="outline" className="text-xs cursor-pointer" onClick={() => setInputValue("What are Arjun's skills?")}>
+                  <div className="mt-2 flex flex-wrap gap-1 justify-center sm:justify-start">
+                    <Badge variant="outline" className="text-xs cursor-pointer text-center" onClick={() => setInputValue("What are Arjun's skills?")}>
                       Skills
                     </Badge>
-                    <Badge variant="outline" className="text-xs cursor-pointer" onClick={() => setInputValue("Tell me about Arjun's education")}>
+                    <Badge variant="outline" className="text-xs cursor-pointer text-center" onClick={() => setInputValue("Tell me about Arjun's education")}>
                       Education
                     </Badge>
-                    <Badge variant="outline" className="text-xs cursor-pointer" onClick={() => setInputValue("What projects has Arjun worked on?")}>
+                    <Badge variant="outline" className="text-xs cursor-pointer text-center" onClick={() => setInputValue("What projects has Arjun worked on?")}>
                       Projects
                     </Badge>
-                    <Badge variant="outline" className="text-xs cursor-pointer" onClick={() => setInputValue("Arjun's email")}>
+                    <Badge variant="outline" className="text-xs cursor-pointer text-center" onClick={() => setInputValue("Arjun's email")}>
                       Contact
                     </Badge>
                   </div>
-                  <div className="mt-2 text-xs text-muted-foreground">
+                  <div className="mt-2 text-xs text-muted-foreground text-center sm:text-left">
                     💡 Upload PDF/MD files to <code>src/data/chatbot-resources/</code> for more accurate responses
                   </div>
                 </div>

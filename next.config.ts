@@ -28,20 +28,10 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
-      {
-        protocol: 'https',
-        hostname: 'drive.google.com',
-        port: '',
-        pathname: '/**',
-      },
     ],
   },
-  // Production optimizations
-  compress: true,
-  poweredByHeader: false,
-  generateEtags: false,
-  // API route optimizations
-  serverExternalPackages: [],
+  // Exclude bcrypt from Edge runtime
+  serverExternalPackages: ['bcrypt'],
 };
 
 export default nextConfig;
