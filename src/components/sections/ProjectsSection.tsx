@@ -9,40 +9,44 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
     title: "AI Chatbot",
     description: "A full-stack application featuring text and voice input, using REST APIs for smooth communication with OpenAI.",
-    image: "https://cdn.pixabay.com/photo/2023/02/13/06/24/ai-7786589_1280.png",
-    tech: ["Spring Boot", "React.js", "OpenAI API"],
+    image: "/images/AI-chatbot.png",
+    tech: ["Spring Boot", "Supabase", "Database", "React.js", "OpenAI API"],
     github: "https://github.com/PRINCE200016/chatbot-avis.git",
+    liveDemo: "https://huggingface.co/spaces/Arjunrajawat/Jarvis",
     aiHint: "AI robot"
   },
   {
-    title: "Job Portal Website",
-    description: "A full-stack project with authentication, job postings, and an admin panel, built with a modular architecture.",
-    image: "https://cdn.pixabay.com/photo/2016/12/18/10/20/application-1915343_1280.jpg",
-    tech: ["Spring Boot", "MySQL", "Postman"],
-    github: "https://github.com/PRINCE200016/Job_Portal.git",
-    aiHint: "job board"
+    title: "AI-Powered Travel Planner",
+    description: "An intelligent travel planning web application that generates personalized trip recommendations based on budget, duration, and user preferences. Includes smart constraint validation, cost estimation, and dynamic destination filtering for accurate results.",
+    image: "/images/AI-travel-Planner.png",
+    tech: ["Java", "Spring Boot", "Supabase", "Database", "REST APIs", "JavaScript", "HTML", "CSS"],
+    github: "https://github.com/PRINCE200016/travelai.git",
+    liveDemo: "#",
+    aiHint: "travel planning AI"
   },
   {
     title: "Weather Web Application",
     description: "A web app that provides real-time weather data, featuring asynchronous data fetching and error handling.",
-    image: "https://cdn.pixabay.com/photo/2024/06/12/11/11/sketch-8825072_1280.jpg",
+    image: "/images/Weather web.png",
     tech: ["JavaScript", "OpenWeather API"],
     github: "https://github.com/PRINCE200016/Weather-web.git",
+    liveDemo: "https://huggingface.co/spaces/Arjunrajawat/Weather",
     aiHint: "weather forecast"
   },
-   {
-    title: "E-commerce Homepage Clone",
-    description: "An Amazon-inspired responsive homepage clone.",
-    image: "https://cdn.pixabay.com/photo/2022/08/24/16/26/business-7408289_1280.jpg",
-    tech: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/PRINCE200016/E-commerce-web.git",
-    aiHint: "online shopping"
+  {
+    title: "Garden View Resort Website",
+    description: "A responsive and visually appealing resort website showcasing amenities, services, and booking details. Designed with modern UI principles and smooth navigation for an engaging user experience.",
+    image: "/images/Garden view Resort.png",
+    tech: ["Java", "React", "Supabase", "Database", "JavaScript", "Spring Boot", "HTML", "CSS", "Bootstrap"],
+    github: "https://github.com/PRINCE200016/Garden-View.git",
+    liveDemo: "#",
+    aiHint: "resort website"
   },
 ];
 
@@ -79,23 +83,31 @@ const ProjectsSection = () => {
               <CardContent className="p-4">
                 <CardTitle className="text-xl">{project.title}</CardTitle>
                 <CardDescription className="mt-2 min-h-[3rem]">
-                    {project.description}
+                  {project.description}
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-start gap-4 p-4">
                 <div className="flex flex-wrap gap-2">
-                  {project.tech.map((t) => (
+                  {project.tech?.map((t) => (
                     <Badge key={t} variant="secondary">
                       {t}
                     </Badge>
                   ))}
                 </div>
-                 <Button asChild variant="outline" className="w-full">
+                <div className="flex w-full gap-3">
+                  <Button asChild variant="outline" className="flex-1">
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-4 w-4" />
-                        View on GitHub
+                      <Github className="mr-2 h-4 w-4" />
+                      GitHub
                     </a>
-                </Button>
+                  </Button>
+                  <Button asChild className="flex-1">
+                    <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Live Demo
+                    </a>
+                  </Button>
+                </div>
               </CardFooter>
             </Card>
           ))}

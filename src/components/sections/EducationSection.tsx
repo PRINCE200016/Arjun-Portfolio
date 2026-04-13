@@ -15,7 +15,7 @@ const educationData = [
     icon: <Briefcase />,
     title: "Full Stack Java Development Course",
     institution: "Online Platform",
-    year: "Expected 2025",
+    year: "2025",
     details: "Comprehensive course on full-stack Java development.",
     certificate: "https://drive.google.com/file/d/1YPB0Sr2KnE_FMWs9aZn1iMfDSqhUzqTQ/view?usp=drive_link",
   },
@@ -25,13 +25,13 @@ const educationData = [
     institution: "iTrainU Technologies, Indore",
     year: "Dec 2024",
     details: "Intensive training program focused on practical, hands-on project development with Java and related technologies.",
-     certificate: "https://drive.google.com/file/d/1YPt7cdXp62X-8fw9hGuIVQtA45CAmSgg/view?usp=drive_link",
+    certificate: "https://drive.google.com/file/d/1YPt7cdXp62X-8fw9hGuIVQtA45CAmSgg/view?usp=drive_link",
   },
   {
     icon: <GraduationCap />,
     title: "B.Sc. Computer Science",
     institution: "Jiwaji University, Gwalior",
-    year: "Expected 2025",
+    year: "2025",
     details: "Pursuing a Bachelor's degree with a focus on computer science fundamentals.",
   },
   {
@@ -72,17 +72,15 @@ const EducationSection = () => {
               className="group relative mb-8 flex items-center md:mb-12"
             >
               <div
-                className={`flex w-full items-center justify-center ${
-                  index % 2 === 0 ? "md:justify-start" : "md:justify-end"
-                }`}
+                className={`flex w-full items-center justify-center ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"
+                  }`}
               >
                 <div className="w-full md:w-5/12">
                   <Card
-                    className={`transition-all duration-300 hover:scale-105 hover:shadow-xl ${
-                      index % 2 === 0
+                    className={`transition-all duration-300 hover:scale-105 hover:shadow-xl ${index % 2 === 0
                         ? "md:text-right"
                         : "md:text-left"
-                    }`}
+                      }`}
                   >
                     <CardHeader
                       className={
@@ -100,7 +98,7 @@ const EducationSection = () => {
                       {item.certificate && (
                         <Link href={item.certificate} target="_blank" rel="noopener noreferrer">
                           <div className="relative mt-4 h-24 w-full overflow-hidden rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                            <Image src="https://picsum.photos/400/200" alt={`${item.title} certificate`} fill className="object-cover transition-transform duration-300 group-hover:scale-105" data-ai-hint="certificate document"/>
+                            <Image src="https://picsum.photos/400/200" alt={`${item.title} certificate`} fill className="object-cover transition-transform duration-300 group-hover:scale-105" data-ai-hint="certificate document" />
                             <div className="absolute inset-0 flex items-center justify-center bg-black/50 text-white">View Certificate</div>
                           </div>
                         </Link>
