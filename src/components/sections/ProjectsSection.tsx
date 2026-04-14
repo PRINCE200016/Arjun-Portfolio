@@ -27,7 +27,7 @@ const projects = [
     image: "/images/AI-travel-Planner.png",
     tech: ["Java", "Spring Boot", "Supabase", "Database", "REST APIs", "JavaScript", "HTML", "CSS"],
     github: "https://github.com/PRINCE200016/travelai.git",
-    liveDemo: "#",
+    liveDemo: "https://tripmind-ai.vercel.app",
     aiHint: "travel planning AI"
   },
   {
@@ -45,7 +45,7 @@ const projects = [
     image: "/images/Garden view Resort.png",
     tech: ["Java", "React", "Supabase", "Database", "JavaScript", "Spring Boot", "HTML", "CSS", "Bootstrap"],
     github: "https://github.com/PRINCE200016/Garden-View.git",
-    liveDemo: "#",
+    liveDemo: "https://garden-view-resort.vercel.app",
     aiHint: "resort website"
   },
 ];
