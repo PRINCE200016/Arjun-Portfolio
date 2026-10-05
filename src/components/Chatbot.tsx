@@ -4,16 +4,10 @@ import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { Badge } from '@/components/ui/badge';
-import { MessageCircle, Send, X, Bot, User, Upload } from 'lucide-react';
+import { MessageCircle, Send, X, Bot, User, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
-interface Message {
-  id: string;
-  content: string;
-  isUser: boolean;
-  timestamp: Date;
-}
+import { suggestedQuestions } from '@/data/portfolioData';
+import { getBotResponse, ChatMessage } from '@/lib/chatbotEngine';
 
 interface ContactInfo {
   email?: string;
@@ -22,12 +16,89 @@ interface ContactInfo {
   github?: string;
 }
 
+// Simple formatter to render bold and markdown links safely
+const FormattedMessage = ({ content }: { content: string }) => {
+  const renderFormattedText = (text: string) => {
+    // Split by markdown link pattern [label](url)
+    const linkRegex = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push(renderBoldText(text.substring(lastIndex, match.index)));
+      }
+      const label = match[1];
+      const url = match[2];
+      parts.push(
+        <a
+          key={match.index}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-accent underline underline-offset-2 hover:opacity-80"
+        >
+          {label}
+        </a>
+      );
+      lastIndex = linkRegex.lastIndex;
+    }
+
+    if (lastIndex < text.length) {
+      parts.push(renderBoldText(text.substring(lastIndex)));
+    }
+
+    return parts;
+  };
+
+  const renderBoldText = (text: string) => {
+    const boldRegex = /\*\*([^*]+)\*\*/g;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = boldRegex.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push(text.substring(lastIndex, match.index));
+      }
+      parts.push(
+        <strong key={match.index} className="font-semibold text-foreground">
+          {match[1]}
+        </strong>
+      );
+      lastIndex = boldRegex.lastIndex;
+    }
+
+    if (lastIndex < text.length) {
+      parts.push(text.substring(lastIndex));
+    }
+
+    return parts;
+  };
+
+  return (
+    <div className="whitespace-pre-wrap leading-relaxed text-sm">
+      {content.split('\n').map((line, idx) => (
+        <span key={idx}>
+          {renderFormattedText(line)}
+          {idx < content.split('\n').length - 1 && <br />}
+        </span>
+      ))}
+    </div>
+  );
+};
+
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
+  const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: '1',
-      content: `Hi! I'm your personal assistant for Arjun Rajawat. I can tell you about his skills, education, projects, achievements, and background. What would you like to know?`,
+      content: `Hello! I'm Arjun Rajawat's AI Portfolio Assistant.
+
+I can answer any questions about Arjun's **experience at D-Table Analytics**, his **HydraPay project**, skills, career journey, or how to contact him.
+
+Feel free to ask a question or click any of the suggestions below!`,
       isUser: false,
       timestamp: new Date()
     }
@@ -35,6 +106,7 @@ const Chatbot = () => {
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [contactInfo, setContactInfo] = useState<ContactInfo>({});
+  const [activeChips, setActiveChips] = useState<string[]>(suggestedQuestions);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -43,10 +115,9 @@ const Chatbot = () => {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
+  }, [messages, isTyping]);
 
   useEffect(() => {
-    // Load contact info on component mount
     fetchContactInfo();
   }, []);
 
@@ -62,206 +133,111 @@ const Chatbot = () => {
     }
   };
 
-  const generateResponse = async (userMessage: string): Promise<string> => {
-    const message = userMessage.toLowerCase().trim();
-    
-    // Check if the question is about Arjun
-    const arjunKeywords = ['arjun', 'rajawat', 'he', 'his', 'him', 'about'];
-    const isAboutArjun = arjunKeywords.some(keyword => message.includes(keyword));
-    
-    // Single word questions that should be answered
-    const singleWordQuestions = ['hometown', 'home', 'email', 'contact', 'phone', 'skills', 'education', 'projects', 'about', 'location', 'address', 'github', 'project', 'qualifications', 'university',"College"," College Name","Linkedin"];
-    const isSingleWordQuestion = singleWordQuestions.includes(message);
-    
-    // Keywords that indicate questions about Arjun (even without mentioning his name)
-    const arjunRelatedKeywords = ['skills', 'education', 'projects', 'achievements', 'hobbies', 'background', 'passout', 'lived', 'where', 'email', 'contact', 'gmail', 'phone', 'github', 'hometown', 'qualifications', 'university', 'degree', 'stud', 'work', 'portfolio',"College"," College Name","Linkedin"];
-    const isArjunRelated = arjunRelatedKeywords.some(keyword => message.includes(keyword));
-    
-    // Check for non-Arjun related questions
-    if (!isAboutArjun && !isSingleWordQuestion && !isArjunRelated) {
-      return "Sorry, I can only provide information about Arjun Rajawat.";
+  const getContextualFollowUps = (lastQuery: string): string[] => {
+    const q = lastQuery.toLowerCase();
+    if (q.includes('hydrapay') || q.includes('ledger')) {
+      return [
+        "What does Arjun do at D-Table Analytics?",
+        "What are Arjun's top skills?",
+        "Show me his projects",
+        "How can I contact Arjun?"
+      ];
     }
-
-    try {
-      // Search in files for relevant information
-      const response = await fetch('/api/chatbot/search', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ query: userMessage }),
-      });
-
-      let data;
-      try {
-        data = await response.json();
-      } catch (jsonError) {
-        console.error('JSON parsing error:', jsonError);
-        return "Sorry, I'm having trouble processing the response. Please try again.";
-      }
-      
-      const searchResults = data.results || [];
-      const contactInfo = data.contactInfo || {};
-
-      // Handle single word questions first
-      if (message === 'hometown' || message === 'home') {
-        return "Arjun's hometown: Bhind, Madhya Pradesh, India";
-      }
-
-      if (message === 'email' || message === 'contact') {
-        if (contactInfo.email) {
-          return `Arjun's email: ${contactInfo.email}`;
-        }
-        return "Arjun's email: arjunrajawat28@gmail.com";
-      }
-
-      if (message === 'phone') {
-        if (contactInfo.phone) {
-          return `Arjun's phone: ${contactInfo.phone}`;
-        }
-        return "Arjun's phone: +91-7509245769";
-      }
-
-      if (message === 'github') {
-        if (contactInfo.github) {
-          return `Arjun's GitHub: ${contactInfo.github}`;
-        }
-        return "Arjun's GitHub: https://github.com/arjun-rajawat";
-      }
-
-      if (message === 'skills') {
-        return "Arjun's key skills: Java, Spring Boot, React.js, JavaScript, MySQL, REST APIs, Git & GitHub";
-      }
-
-      if (message === 'education' || message === 'qualifications') {
-        return "Arjun is pursuing B.Sc. Computer Science at Jiwaji University, Gwalior (Expected 2025) and completed Java Full Stack Development training at iTrainU Technologies";
-      }
-
-      if (message === 'projects' || message === 'project') {
-        return "Arjun's main projects: AI Chatbot (Spring Boot + React), Job Portal Website (Spring Boot + MySQL), Weather App (JavaScript), and E-commerce Clone (HTML/CSS/JS)";
-      }
-
-      if (message === 'about') {
-        return "Arjun Rajawat is a Java Full Stack Developer and Computer Science student. He's passionate about building scalable web applications and solving problems";
-      }
-
-      if (message === 'location' || message === 'address') {
-        return "Arjun is from Bhind, Madhya Pradesh, India and currently in Indore, Madhya Pradesh";
-      }
-
-      if (message === 'university' || message === 'college' || message === 'college name') {
-        return "Arjun is pursuing B.Sc. Computer Science at Jiwaji University, Gwalior (Expected 2025)";
-      }
-
-      if (message === 'linkedin') {
-        if (contactInfo.linkedin) {
-          return `Arjun's LinkedIn: ${contactInfo.linkedin}`;
-        }
-        return "Arjun's LinkedIn: https://linkedin.com/in/arjun-rajawat";
-      }
-
-      // Handle contact information questions
-      if (message.includes('email') || message.includes('gmail') || message.includes('contact')) {
-        if (contactInfo.email) {
-          return `Arjun's email: ${contactInfo.email}`;
-        }
-        return "Arjun's email: arjunrajawat28@gmail.com";
-      }
-
-      if (message.includes('phone') || message.includes('number') || message.includes('call')) {
-        if (contactInfo.phone) {
-          return `Arjun's phone: ${contactInfo.phone}`;
-        }
-        return "Arjun's phone: +91-7509245769";
-      }
-
-      if (message.includes('linkedin')) {
-        if (contactInfo.linkedin) {
-          return `Arjun's LinkedIn: ${contactInfo.linkedin}`;
-        }
-        return "Arjun's LinkedIn: https://linkedin.com/in/arjun-rajawat";
-      }
-
-      if (message.includes('github')) {
-        if (contactInfo.github) {
-          return `Arjun's GitHub: ${contactInfo.github}`;
-        }
-        return "Arjun's GitHub: https://github.com/arjun-rajawat";
-      }
-
-      // If we have search results, return the most relevant one
-      if (searchResults.length > 0) {
-        // Return the first relevant result, truncated to 2 lines max
-        const result = searchResults[0];
-        const sentences = result.split(/[.!?]+/).slice(0, 2);
-        return sentences.join('. ').trim() + (sentences.length > 1 ? '.' : '');
-      }
-
-      // Fallback responses based on keywords
-      if (message.includes('passout') || message.includes('graduat') || message.includes('education') || 
-          message.includes('degree') || message.includes('stud') || message.includes('university') || 
-          message.includes('college') || message.includes('year')) {
-        return `Arjun is pursuing B.Sc. Computer Science at Jiwaji University, Gwalior (Expected 2025) and completed Java Full Stack Development training at iTrainU Technologies`;
-      }
-
-      if (message.includes('where') || message.includes('lived') || message.includes('location') || 
-          message.includes('from') || message.includes('address') || message.includes('hometown')) {
-        return `Arjun is from Bhind, Madhya Pradesh, India and currently in Indore, Madhya Pradesh`;
-      }
-
-      if (message.includes('skill') || message.includes('technolog') || message.includes('programming')) {
-        return `Arjun's key skills: Java, Spring Boot, React.js, JavaScript, MySQL, REST APIs, Git & GitHub`;
-      }
-
-      if (message.includes('project') || message.includes('work') || message.includes('portfolio')) {
-        return `Arjun's main projects: AI Chatbot (Spring Boot + React), Job Portal Website (Spring Boot + MySQL), Weather App (JavaScript), and E-commerce Clone (HTML/CSS/JS)`;
-      }
-
-      if (message.includes('about') || message.includes('background') || message.includes('who')) {
-        return `Arjun Rajawat is a Java Full Stack Developer and Computer Science student. He's passionate about building scalable web applications and solving problems`;
-      }
-
-      return `Arjun Rajawat is a Java Full Stack Developer and Computer Science student. He specializes in Java, Spring Boot, React.js, and has built several projects including AI Chatbot and Job Portal`;
-
-    } catch (error) {
-      console.error('Error generating response:', error);
-      return "Sorry, I'm having trouble accessing the information right now. Please try again.";
+    if (q.includes('d-table') || q.includes('analytics') || q.includes('apps script')) {
+      return [
+        "Tell me about HydraPay",
+        "What are Arjun's top skills?",
+        "What is his educational background?",
+        "How can I contact Arjun?"
+      ];
     }
+    if (q.includes('skill')) {
+      return [
+        "Tell me about HydraPay",
+        "What does Arjun do at D-Table Analytics?",
+        "Show me his projects",
+        "How can I contact Arjun?"
+      ];
+    }
+    if (q.includes('project')) {
+      return [
+        "Tell me about HydraPay",
+        "What does Arjun do at D-Table Analytics?",
+        "What are Arjun's top skills?",
+        "How can I contact Arjun?"
+      ];
+    }
+    return [
+      "Tell me about HydraPay",
+      "What does Arjun do at D-Table Analytics?",
+      "What are Arjun's top skills?",
+      "How can I contact Arjun?"
+    ];
   };
 
-  const handleSendMessage = async () => {
-    if (!inputValue.trim()) return;
+  const handleSendMessage = async (textToSend?: string) => {
+    const text = (textToSend || inputValue).trim();
+    if (!text || isTyping) return;
 
-    const userMessage: Message = {
+    const userMessage: ChatMessage = {
       id: Date.now().toString(),
-      content: inputValue,
+      content: text,
       isUser: true,
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    setMessages((prev) => [...prev, userMessage]);
     setInputValue('');
     setIsTyping(true);
 
     try {
-      // Generate response using file-based search
-      const response = await generateResponse(inputValue);
-      const botMessage: Message = {
+      let botReply = '';
+
+      try {
+        const response = await fetch('/api/chatbot/search', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            query: text,
+            history: messages.slice(-4),
+          }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          if (data.answer) {
+            botReply = data.answer;
+          }
+        }
+      } catch (networkError) {
+        console.warn('Network call failed, using client engine fallback:', networkError);
+      }
+
+      // Robust fallback if API didn't return an answer
+      if (!botReply) {
+        botReply = getBotResponse(text, messages);
+      }
+
+      const botMessage: ChatMessage = {
         id: (Date.now() + 1).toString(),
-        content: response,
+        content: botReply,
         isUser: false,
-        timestamp: new Date()
+        timestamp: new Date(),
       };
-      setMessages(prev => [...prev, botMessage]);
+
+      setMessages((prev) => [...prev, botMessage]);
+      setActiveChips(getContextualFollowUps(text));
     } catch (error) {
       console.error('Error generating response:', error);
-      const errorMessage: Message = {
+      const errorMessage: ChatMessage = {
         id: (Date.now() + 1).toString(),
-        content: "Sorry, I'm having trouble accessing the information right now. Please try again.",
+        content: "I'm having trouble retrieving that information right now. Please feel free to email Arjun directly at arjunrajawat28@gmail.com!",
         isUser: false,
-        timestamp: new Date()
+        timestamp: new Date(),
       };
-      setMessages(prev => [...prev, errorMessage]);
+      setMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsTyping(false);
     }
@@ -276,133 +252,149 @@ const Chatbot = () => {
 
   return (
     <>
-      {/* Chat Button */}
+      {/* Floating Chat Trigger Button */}
       <Button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-accent text-accent-foreground shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+        className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-accent text-accent-foreground shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl focus:outline-none"
         size="icon"
+        aria-label="Open AI Assistant"
       >
         <MessageCircle className="h-6 w-6" />
       </Button>
 
-      {/* Chat Window */}
+      {/* Floating Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 h-[600px] w-[400px] animate-in slide-in-from-bottom-2 duration-300">
-          <Card className="flex h-full flex-col shadow-2xl">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 border-b bg-accent/10 p-4">
-              <div className="flex items-center space-x-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent">
-                  <Bot className="h-4 w-4 text-accent-foreground" />
+        <div className="fixed bottom-6 right-6 z-50 flex h-[620px] max-h-[85vh] w-[92vw] max-w-[430px] flex-col animate-in slide-in-from-bottom-2 duration-300 sm:w-[420px]">
+          <Card className="flex h-full flex-col overflow-hidden border border-border/80 shadow-2xl bg-card">
+            {/* Header */}
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 border-b bg-muted/40 p-4">
+              <div className="flex items-center space-x-2.5">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-sm">
+                  <Bot className="h-5 w-5" />
                 </div>
                 <div>
-                  <CardTitle className="text-sm font-medium">Arjun's Assistant</CardTitle>
-                  <p className="text-xs text-muted-foreground">Ask about Arjun Rajawat</p>
+                  <CardTitle className="text-sm font-headline font-bold">Arjun's Assistant</CardTitle>
+                  <p className="text-[11px] text-muted-foreground flex items-center gap-1">
+                    <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
+                    Online • Powered by Portfolio Data
+                  </p>
                 </div>
               </div>
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsOpen(false)}
-                className="h-8 w-8"
+                className="h-8 w-8 rounded-full hover:bg-muted"
+                aria-label="Close Assistant"
               >
                 <X className="h-4 w-4" />
               </Button>
             </CardHeader>
 
-            <CardContent className="flex-1 overflow-hidden p-0">
-              <div className="flex h-full flex-col">
-                {/* Messages */}
-                <div className="flex-1 overflow-y-auto p-4 space-y-4">
-                  {messages.map((message) => (
+            {/* Conversation Content Area */}
+            <CardContent className="flex flex-1 flex-col overflow-hidden p-0">
+              <div className="flex-1 overflow-y-auto p-4 space-y-4">
+                {messages.map((message) => (
+                  <div
+                    key={message.id}
+                    className={cn(
+                      "flex gap-2.5 items-start",
+                      message.isUser ? "justify-end" : "justify-start"
+                    )}
+                  >
+                    {!message.isUser && (
+                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent/20 text-accent mt-0.5">
+                        <Bot className="h-4 w-4" />
+                      </div>
+                    )}
                     <div
-                      key={message.id}
                       className={cn(
-                        "flex gap-2",
-                        message.isUser ? "justify-end" : "justify-start"
+                        "max-w-[85%] rounded-2xl px-3.5 py-2.5 text-sm shadow-sm",
+                        message.isUser
+                          ? "bg-primary text-primary-foreground rounded-br-none"
+                          : "bg-muted/80 text-foreground border border-border/50 rounded-bl-none"
                       )}
                     >
-                      {!message.isUser && (
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent/20">
-                          <Bot className="h-4 w-4 text-accent" />
-                        </div>
-                      )}
+                      <FormattedMessage content={message.content} />
                       <div
                         className={cn(
-                          "max-w-[80%] rounded-lg px-3 py-2 text-sm",
-                          message.isUser
-                            ? "bg-accent text-accent-foreground"
-                            : "bg-muted"
+                          "mt-1 text-[10px] opacity-60 text-right",
+                          message.isUser ? "text-primary-foreground" : "text-muted-foreground"
                         )}
                       >
-                        <div className="whitespace-pre-wrap">{message.content}</div>
-                        <div className="mt-1 text-xs opacity-70">
-                          {message.timestamp.toLocaleTimeString([], { 
-                            hour: '2-digit', 
-                            minute: '2-digit' 
-                          })}
-                        </div>
-                      </div>
-                      {message.isUser && (
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20">
-                          <User className="h-4 w-4 text-primary" />
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                  
-                  {isTyping && (
-                    <div className="flex gap-2">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent/20">
-                        <Bot className="h-4 w-4 text-accent" />
-                      </div>
-                      <div className="rounded-lg bg-muted px-3 py-2">
-                        <div className="flex space-x-1">
-                          <div className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground [animation-delay:-0.3s]"></div>
-                          <div className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground [animation-delay:-0.15s]"></div>
-                          <div className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground"></div>
-                        </div>
+                        {new Date(message.timestamp).toLocaleTimeString([], {
+                          hour: '2-digit',
+                          minute: '2-digit',
+                        })}
                       </div>
                     </div>
-                  )}
-                  <div ref={messagesEndRef} />
-                </div>
+                    {message.isUser && (
+                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary mt-0.5">
+                        <User className="h-4 w-4" />
+                      </div>
+                    )}
+                  </div>
+                ))}
 
-                {/* Input */}
-                <div className="border-t p-4">
-                  <div className="flex gap-2">
-                    <Input
-                      value={inputValue}
-                      onChange={(e) => setInputValue(e.target.value)}
-                      onKeyPress={handleKeyPress}
-                      placeholder="Ask about Arjun Rajawat..."
-                      className="flex-1"
-                    />
+                {isTyping && (
+                  <div className="flex gap-2.5 items-center">
+                    <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent/20 text-accent">
+                      <Bot className="h-4 w-4" />
+                    </div>
+                    <div className="rounded-2xl bg-muted/80 px-3.5 py-2.5 border border-border/50">
+                      <div className="flex space-x-1.5">
+                        <div className="h-2 w-2 animate-bounce rounded-full bg-accent [animation-delay:-0.3s]"></div>
+                        <div className="h-2 w-2 animate-bounce rounded-full bg-accent [animation-delay:-0.15s]"></div>
+                        <div className="h-2 w-2 animate-bounce rounded-full bg-accent"></div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <div ref={messagesEndRef} />
+              </div>
+
+              {/* Suggested Questions Chips */}
+              <div className="border-t border-border/40 bg-muted/20 px-3 pt-2.5 pb-2">
+                <div className="flex items-center gap-1.5 mb-1.5 text-[11px] font-medium text-muted-foreground">
+                  <Sparkles className="h-3 w-3 text-accent" />
+                  <span>Suggested questions:</span>
+                </div>
+                <div className="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto no-scrollbar pb-1">
+                  {activeChips.map((chip, idx) => (
                     <Button
-                      onClick={handleSendMessage}
-                      disabled={!inputValue.trim() || isTyping}
-                      size="icon"
-                      className="bg-accent text-accent-foreground hover:bg-accent/90"
+                      key={idx}
+                      variant="outline"
+                      size="sm"
+                      onClick={() => handleSendMessage(chip)}
+                      disabled={isTyping}
+                      className="h-auto py-1 px-2.5 text-xs font-normal bg-background/80 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors rounded-full"
                     >
-                      <Send className="h-4 w-4" />
+                      {chip}
                     </Button>
-                  </div>
-                  <div className="mt-2 flex flex-wrap gap-1">
-                    <Badge variant="outline" className="text-xs cursor-pointer" onClick={() => setInputValue("What are Arjun's skills?")}>
-                      Skills
-                    </Badge>
-                    <Badge variant="outline" className="text-xs cursor-pointer" onClick={() => setInputValue("Tell me about Arjun's education")}>
-                      Education
-                    </Badge>
-                    <Badge variant="outline" className="text-xs cursor-pointer" onClick={() => setInputValue("What projects has Arjun worked on?")}>
-                      Projects
-                    </Badge>
-                    <Badge variant="outline" className="text-xs cursor-pointer" onClick={() => setInputValue("Arjun's email")}>
-                      Contact
-                    </Badge>
-                  </div>
-                  <div className="mt-2 text-xs text-muted-foreground">
-                    💡 Upload PDF/MD files to <code>src/data/chatbot-resources/</code> for more accurate responses
-                  </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Chat Input Bar */}
+              <div className="border-t border-border/60 p-3 bg-card">
+                <div className="flex gap-2 items-center">
+                  <Input
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    onKeyPress={handleKeyPress}
+                    placeholder="Ask about HydraPay, D-Table, skills..."
+                    className="flex-1 text-sm bg-muted/30 focus-visible:ring-accent"
+                    disabled={isTyping}
+                  />
+                  <Button
+                    onClick={() => handleSendMessage()}
+                    disabled={!inputValue.trim() || isTyping}
+                    size="icon"
+                    className="h-9 w-9 bg-accent text-accent-foreground hover:bg-accent/90 shrink-0"
+                    aria-label="Send message"
+                  >
+                    <Send className="h-4 w-4" />
+                  </Button>
                 </div>
               </div>
             </CardContent>

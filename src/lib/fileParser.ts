@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { getContextForChatbot, personalInfo } from '@/data/portfolioData';
 
 export interface ParsedContent {
   filename: string;
@@ -10,57 +11,14 @@ export interface ParsedContent {
 export class FileParser {
   private static resourcesPath = path.join(process.cwd(), 'src', 'data', 'chatbot-resources');
   
-  // Fallback data for when file system is not available
+  // Fallback data dynamically built from portfolioData single source of truth
   private static fallbackData = {
-    content: `# Arjun Rajawat - Personal Information
-
-## Basic Information
-- **Name**: Arjun Rajawat
-- **Title**: Java Full Stack Developer
-- **Home**: Bhind, Madhya Pradesh, India
-- **Location**: Indore, Madhya Pradesh, India
-- **Email**: arjunrajawat28@gmail.com
-- **Phone**: +91-7509245769
-- **LinkedIn**: https://linkedin.com/in/arjun-rajawat
-- **GitHub**: https://github.com/arjun-rajawat
-
-## Professional Summary
-Arjun Rajawat is a Java Full Stack Developer, Problem Solver, and Tech Enthusiast, turning ideas into scalable and intelligent solutions.
-
-## Education
-- **B.Sc. Computer Science** - Jiwaji University, Gwalior (Expected 2025)
-- **Java Full Stack Development Training** - iTrainU Technologies, Indore (Dec 2024)
-
-## Technical Skills
-- **Programming Languages**: Java, JavaScript
-- **Frameworks**: Spring Boot, React.js
-- **Databases**: MySQL, Hibernate
-- **Tools**: Postman, Git & GitHub
-- **APIs**: REST APIs
-- **Other**: Data Structures, Problem Solving
-
-## Projects
-1. **AI Chatbot** - Full-stack application with text and voice input using REST APIs for OpenAI communication
-2. **Job Portal Website** - Full-stack project with authentication, job postings, and admin panel
-3. **Weather Web Application** - Real-time weather data with asynchronous data fetching
-4. **E-commerce Homepage Clone** - Amazon-inspired responsive homepage
-
-## Achievements
-- Strong problem-solving ability
-- Dedicated to continuous learning
-- Aspiring to contribute to innovative projects that impact millions of users
-
-## Hobbies & Interests
-- Problem solving
-- Learning new technologies
-- Building scalable applications
-- Tech enthusiasm
-- Contributing to open source projects`,
+    content: getContextForChatbot(),
     contactInfo: {
-      email: 'arjunrajawat28@gmail.com',
-      phone: '+91-7509245769',
-      linkedin: 'https://linkedin.com/in/arjun-rajawat',
-      github: 'https://github.com/arjun-rajawat'
+      email: personalInfo.email,
+      phone: personalInfo.phone,
+      linkedin: personalInfo.linkedin,
+      github: personalInfo.github
     }
   };
 

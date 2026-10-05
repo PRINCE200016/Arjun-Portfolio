@@ -1,8 +1,9 @@
 import Header from '@/components/Header';
 import HeroSection from '@/components/sections/HeroSection';
 import AboutSection from '@/components/sections/AboutSection';
-import EducationSection from '@/components/sections/EducationSection';
+import JourneySection from '@/components/sections/JourneySection';
 import SkillsSection from '@/components/sections/SkillsSection';
+import ExperienceSection from '@/components/sections/ExperienceSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/Footer';
@@ -19,15 +20,18 @@ export default function Home() {
           <AboutSection />
         </AnimatedSection>
         <AnimatedSection delay={0.15}>
-          <EducationSection />
+          <JourneySection />
         </AnimatedSection>
         <AnimatedSection delay={0.2}>
           <SkillsSection />
         </AnimatedSection>
         <AnimatedSection delay={0.25}>
-          <ProjectsSection />
+          <ExperienceSection />
         </AnimatedSection>
         <AnimatedSection delay={0.3}>
+          <ProjectsSection />
+        </AnimatedSection>
+        <AnimatedSection delay={0.35}>
           <ContactSection />
         </AnimatedSection>
       </main>
