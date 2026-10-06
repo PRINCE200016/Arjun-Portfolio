@@ -1,0 +1,381 @@
+{
+  "loading": {
+    "title": "ARJUN RAJAWAT",
+    "status": [
+      "UMGEBUNG INITIALISIEREN",
+      "ASSETS LADEN",
+      "SZENE AUFBAUEN",
+      "SYSTEME VERBINDEN",
+      "BEREIT"
+    ]
+  },
+  "entry": {
+    "name": "ARJUN RAJAWAT",
+    "role": "JAVA FULL-STACK-ENTWICKLER",
+    "status": "SYSTEM BEREIT",
+    "enter": "PORTFOLIO ÖFFNEN",
+    "soundOn": "◉ TON AN",
+    "soundOff": "◎ TON AKTIVIEREN",
+    "chooseLang": "SPRACHE WÄHLEN",
+    "selectLang": "Wählen Sie Ihre bevorzugte Sprache",
+    "continue": "WEITER →",
+    "change": "ändern"
+  },
+  "privacy": {
+    "message": "Durch die weitere Nutzung dieser Website stimmen Sie unserer",
+    "policy": "Datenschutzerklärung zu",
+    "accept": "AKZEPTIEREN"
+  },
+  "nav": {
+    "home": "START",
+    "about": "ÜBER MICH",
+    "skills": "LEISTUNGEN",
+    "experience": "WERDEGANG",
+    "projects": "PROJEKTE",
+    "contact": "KONTAKT",
+    "engineerBadge": "INGENIEUR"
+  },
+  "home": {
+    "greeting": "JAVA FULL-STACK-ENTWICKLER",
+    "roles": [
+      "JAVA FULL-STACK-ENTWICKLER",
+      "BACKEND-INGENIEUR",
+      "SOFTWARE-ENTWICKLER",
+      "UNTERNEHMENSAUTOMATISIERUNG"
+    ],
+    "viewProjects": "PROJEKTE ANSEHEN",
+    "downloadResume": "LEBENSLAUF HERUNTERLADEN",
+    "contactMe": "GEMEINSAM ETWAS ERSCHAFFEN"
+  },
+  "about": {
+    "station": "02 — ÜBER MICH",
+    "heading": "ÜBER MICH",
+    "intellectLabel": "VERSTAND & ARCHITEKTUR",
+    "bio": "Hallo, ich bin Arjun Rajawat, Java Full-Stack-Entwickler und Ingenieur für Unternehmensautomatisierung. Ich bin spezialisiert auf den Aufbau fehlertoleranter Architekturen, Google Apps Script-Systeme, Spring Boot-Microservices und robuste Datenbankebenen mit null Datenverlust. Entdecken Sie meine Projekte in diesem Portfolio oder auf meinem GitHub.",
+    "tabTimeline": "AUSBILDUNG & WERDEGANG",
+    "tabSkills": "FÄHIGKEITEN & EXPERTISE",
+    "howIBuild": "WIE ICH ENTWICKLE",
+    "viewFullExperience": "Vollständigen Werdegang ansehen",
+    "verifiedCertificate": "Verifiziertes Zertifikat",
+    "principles": [
+      "Fehlertolerante Systeme ohne Datenverlust",
+      "ACID-Transaktionen und strikte doppelte Buchführung",
+      "Ereignisgesteuerte Architekturen für hohe Skalierbarkeit",
+      "Produktions-Debugging und Leistungsoptimierung",
+      "Sauberer, modularer und wartungsfreundlicher Quellcode"
+    ],
+    "journey": [
+      {
+        "id": "d-table-experience",
+        "year": "Juli 2026 – Heute",
+        "title": "Apps Script-Entwickler",
+        "institution": "D-Table Analytics, Bhopal",
+        "type": "Beruf",
+        "details": "Entwicklung und Betreuung von Unternehmensanwendungen mit Google Apps Script, JavaScript, HTML, CSS und Google Sheets APIs, darunter Personalverwaltung, Zeiterfassung, O2D, Einkaufs-FMS und ERP-Dashboards."
+      },
+      {
+        "id": "full-stack-java-course",
+        "year": "2025",
+        "title": "Full-Stack Java-Entwicklungskurs",
+        "institution": "Online-Plattform",
+        "type": "Weiterbildung",
+        "details": "Umfassender Kurs über Enterprise Java mit Spring Boot, REST-APIs und moderne Frontend-Architekturen."
+      },
+      {
+        "id": "itrainu-training",
+        "year": "Dez 2024",
+        "title": "Java Full-Stack- & Microservices-Training",
+        "institution": "iTrainU Technologies, Indore",
+        "type": "Weiterbildung",
+        "details": "Enterprise Java, Spring Boot, Microservices-Architekturen, ausgezeichnet mit dem 'Best Project Award' unter mehr als 80 Teilnehmern."
+      },
+      {
+        "id": "jiwaji-bsc",
+        "year": "2025",
+        "title": "Bachelor in Informatik (B.Sc.)",
+        "institution": "Jiwaji-Universität, Gwalior",
+        "type": "Ausbildung",
+        "details": "Informatik-Studium mit Schwerpunkten auf Datenstrukturen, Algorithmen, Betriebssystemen und Datenbanken."
+      },
+      {
+        "id": "12th-grade",
+        "year": "2019",
+        "title": "Höhere Sekundarstufe (12. Klasse)",
+        "institution": "Sadhana Vidya Niketan, Bhind, M.P.",
+        "type": "Ausbildung",
+        "details": "Abschluss mit Schwerpunkt in Mathematik und Naturwissenschaften (66%)."
+      },
+      {
+        "id": "10th-grade",
+        "year": "2017",
+        "title": "Mittlere Reife (10. Klasse)",
+        "institution": "Scholars Public School, Bhind, M.P.",
+        "type": "Ausbildung",
+        "details": "Abschlussprüfung mit 7.0 CGPA bestanden."
+      }
+    ],
+    "skillCategories": [
+      {
+        "title": "Java & Backend-Entwicklung",
+        "description": "Enterprise-Frameworks und Kernsprachen für hochperformante, ausfallsichere Systeme.",
+        "skills": [
+          "Java 21",
+          "Spring Boot",
+          "Spring MVC",
+          "Hibernate / JPA",
+          "REST API Design",
+          "ACID Transactions",
+          "Idempotency",
+          "Double-Entry Ledger Design",
+          "Transactional Outbox Pattern",
+          "Event-Driven Architecture",
+          "Role-Based Access Control (RBAC)",
+          "SSO & Session Management"
+        ]
+      },
+      {
+        "title": "Google Apps Script & Automatisierung",
+        "description": "Vollständige Unternehmensautomatisierung im Google-Ökosystem für ERP, HR und Workflows.",
+        "skills": [
+          "Google Apps Script",
+          "Google Sheets API",
+          "Apps Script Web Apps",
+          "Triggers & Scheduled Tasks",
+          "HTML Service",
+          "ERP / MIS Dashboards",
+          "Workflow & Approval Automation",
+          "HRMS / O2D / FMS / IMS Systems",
+          "Batch Processing",
+          "Data Migration & Reconciliation"
+        ]
+      },
+      {
+        "title": "Datenbanken & Messaging",
+        "description": "Relationale, In-Memory- und Event-Streaming-Datenschichten für verteilte Systeme.",
+        "skills": [
+          "PostgreSQL 16",
+          "MySQL",
+          "Redis",
+          "Apache Kafka",
+          "HikariCP Connection Pooling",
+          "Google Sheets as Database",
+          "Query & Index Optimization",
+          "Data Validation & Integrity"
+        ]
+      },
+      {
+        "title": "Performance & Qualitätssicherung",
+        "description": "Lasttests, Nebenläufigkeits-Benchmarks und ganzheitliche Qualitätssicherung.",
+        "skills": [
+          "K6 Load Testing",
+          "Query & Index Optimization",
+          "Connection Pooling",
+          "Client-side Pagination",
+          "Caching Strategies",
+          "End-to-End Testing & Debugging",
+          "Postman API Testing",
+          "Production Debugging"
+        ]
+      },
+      {
+        "title": "Frontend & Dashboards",
+        "description": "Moderne reaktive Benutzeroberflächen, dynamische Dashboards und automatisierte Berichte.",
+        "skills": [
+          "React.js",
+          "JavaScript (ES2022+)",
+          "HTML5 & CSS3",
+          "Responsive UI Design",
+          "Dynamic Dashboards",
+          "KPI Cards & Data Tables",
+          "Skeleton Loaders",
+          "PDF / Excel / CSV Report Generation"
+        ]
+      },
+      {
+        "title": "Fachliche & Soziale Kompetenzen",
+        "description": "Strukturierte Problemlösung, Kundenkommunikation und Verantwortung im Produktivbetrieb.",
+        "skills": [
+          "Requirement Analysis",
+          "Client Communication",
+          "Production Support",
+          "Problem Solving",
+          "Data Structures & Algorithms",
+          "Git & GitHub",
+          "Code Review & Maintainability",
+          "Agile / Iterative Delivery"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "station": "03 — LEISTUNGEN",
+    "heading": "LEISTUNGEN & FÄHIGKEITEN",
+    "intro": "Wie kann ich Ihnen helfen? Als Entwickler verwandle ich komplexe Anforderungen in verlässliche Systeme mit praxiserprobten Technologien im Frontend und Backend.",
+    "logicLabel": "LOGIK & PRÄZISION",
+    "services": [
+      {
+        "title": "API-Entwicklung",
+        "desc": "Robuste RESTful-Microservices, Spring Boot-Endpunkte, Authentifizierung und sichere Transaktionspipelines."
+      },
+      {
+        "title": "Webanwendungen",
+        "desc": "Interaktive Hochleistungs-Webportale mit Next.js, React, Tailwind CSS und stabiler Zustandsverwaltung."
+      },
+      {
+        "title": "Unternehmensautomatisierung",
+        "desc": "Google Apps Script, ERP-Konsolidierer, automatisierte Zeitpläne und verlustfreie Workflows."
+      },
+      {
+        "title": "DevOps & CI/CD",
+        "desc": "Git-Versionskontrolle, containerisierte Deployments, automatisierte Pipelines und Continuous Integration."
+      },
+      {
+        "title": "Datenbankarchitektur",
+        "desc": "MySQL, PostgreSQL, Schemamodellierung, ACID-Transaktionen und strikte Konsistenzprüfung."
+      },
+      {
+        "title": "Cloud & Verteilte Systeme",
+        "desc": "Fehlertolerantes Cloud Computing, Google Cloud Platform-Infrastruktur und Microservice-Orchestrierung."
+      }
+    ]
+  },
+  "experience": {
+    "station": "04 — ERFAHRUNG",
+    "heading": "WERDEGANG",
+    "bgText": "WERDEGANG"
+  },
+  "projects": {
+    "station": "05 — PROJEKTE",
+    "heading": "ENGINEERING-PROJEKTE",
+    "intro": "Entdecken Sie meine wichtigsten Ingenieurprojekte. Sie spiegeln fundierte Erfahrung in der Full-Stack-Entwicklung, in Finanzsystemen und modernen Webtechnologien wider.",
+    "detailsBadge": "DETAILS",
+    "projectDetail": "PROJEKTDETAILS",
+    "purposeProblem": "ZWECK & GELÖSTES PROBLEM",
+    "architectureLabel": "ARCHITEKTUR",
+    "keyCapabilities": "HAUPTMERKMALE",
+    "metricsLabel": "LEISTUNGSMETRIKEN",
+    "liveDemo": "LIVE-DEMO",
+    "viewCode": "CODE ANSEHEN",
+    "close": "SCHLIESSEN",
+    "items": [
+      {
+        "id": "hydrapay",
+        "title": "HydraPay — Finanzabrechnung & Doppelte Buchführungs-Engine",
+        "shortTitle": "HydraPay",
+        "description": "Fehlertolerante Finanzabrechnungs-Engine mit doppelter Buchführung, 2-stufiger verteilter Idempotenz und Outbox + Kafka-Pipeline — getestet bis 10.482 TPS bei 13,4 ms P99-Latenz.",
+        "purpose": "Bereitstellung eines Finanz-Ledgers ohne Datenverlust für tausende gleichzeitige Zahlungen ohne Doppelabbuchungen.",
+        "problemSolved": "Beseitigt Race Conditions, Transaktionsduplikate bei Netzwerk-Timeouts und Datenbank-Deadlocks unter hoher Last.",
+        "architecture": "Spring Boot-Serviceschicht, HikariCP-Connection-Pooling, PostgreSQL 16 mit Integritätsprüfungen, Redis und Apache Kafka.",
+        "keyFeatures": [
+          "Strikte doppelte Buchführung stellt sicher, dass Soll und Haben bei jeder Transaktion übereinstimmen",
+          "2-stufige verteilte Idempotenzebene (Redis SETNX-Sperren + PostgreSQL Unique Constraints)",
+          "Transactional Outbox Pattern mit Kafka für garantierte verlustfreie Nachrichtenübermittlung",
+          "Deterministisches pessimistisches Locking (SELECT FOR UPDATE) nach Konto-ID geordnet",
+          "Automatisierte verteilte K6-Lasttestsuite zur realitätsnahen Validierung"
+        ],
+        "metrics": [
+          {
+            "label": "Durchsatz",
+            "value": "10.482 TPS"
+          },
+          {
+            "label": "P99-Latenz",
+            "value": "13,4 ms"
+          },
+          {
+            "label": "Doppelabbuchungen",
+            "value": "0 Fehler"
+          },
+          {
+            "label": "DB-Deadlocks",
+            "value": "0 Deadlocks"
+          }
+        ]
+      },
+      {
+        "id": "ai-chatbot",
+        "title": "KI-Chatbot",
+        "shortTitle": "AI Chatbot",
+        "description": "Full-Stack-Anwendung mit Sprach- und Texteingabe, angebunden über REST-APIs für natürliche Interaktion mit OpenAI.",
+        "purpose": "Bereitstellung eines multimodalen interaktiven KI-Assistenten mit Sprachverarbeitung und Sprachausgabe.",
+        "problemSolved": "Ermöglicht freihändige Sprachsuche und unterbrechungsfreie Konversationen mit minimaler Antwortverzögerung.",
+        "architecture": "React.js-Frontend über REST-Schnittstellen mit Spring Boot verbunden, Supabase-Datenbank und OpenAI API.",
+        "keyFeatures": [
+          "Duale Sprach- und Texteingabe mit Echtzeit-Streaming der Antworten",
+          "Spring Boot-Gateway mit Ratenbegrenzung und geschütztem API-Proxy",
+          "Supabase-Integration zur Speicherung des Konversationsverlaufs",
+          "Moderne React-Oberfläche mit dynamischer Audiowellen-Visualisierung"
+        ]
+      },
+      {
+        "id": "ai-travel-planner",
+        "title": "KI-Gestützter Reiseplaner",
+        "shortTitle": "TripMind AI",
+        "description": "Intelligente Web-App, die maßgeschneiderte Reisepläne anhand von Budget, Reisedauer und Präferenzen generiert.",
+        "purpose": "Unterstützt Reisende bei der Erstellung realistischer Tagesabläufe mit genauen Kostenvoranschlägen.",
+        "problemSolved": "Befreit von langwieriger Reiseplanung durch automatische Budgetberechnung und passende Hotelvorschläge.",
+        "architecture": "Java & Spring Boot-Backend zur Verwaltung der Reisedaten, Supabase-Speicher und responsiver Client.",
+        "keyFeatures": [
+          "Budgetgenaue Erstellung von Tagesabläufen und Reiseaktivitäten",
+          "Dynamische Filterung von Reisezielen durch geografische Gruppierung",
+          "Interaktive Kostenaufstellung und Zeitleisten-Visualisierung",
+          "Für Smartphones optimierte, moderne Benutzeroberfläche"
+        ]
+      },
+      {
+        "id": "weather-web",
+        "title": "Echtzeit-Wetter-Webanwendung",
+        "shortTitle": "Weather Web",
+        "description": "Webanwendung für weltweite Wetterdaten in Echtzeit mit asynchronem Laden und Ausfallsicherheit.",
+        "purpose": "Liefert weltweite Wetterberichte, Temperaturtrends und Luftfeuchtigkeitswerte auf einen Klick.",
+        "problemSolved": "Schnelle Wetterabfrage ohne schwere Seitenladezeiten und mit stabiler Fehlerbehandlung bei Netzausfällen.",
+        "architecture": "Schlanke Vanilla JavaScript-Anwendung mit asynchroner OpenWeather-API-Anbindung.",
+        "keyFeatures": [
+          "Städtebasierte Suche mit sofortigem Wetter- und Temperaturbericht",
+          "Asynchrones Abrufen mit automatischer Wiederherstellung bei Verbindungsabbrüchen",
+          "Grafische Anzeigen für Temperatur, Windstärke und Luftfeuchtigkeit",
+          "Schnelle Reaktionszeiten dank clientseitiger Zwischenspeicherung"
+        ]
+      },
+      {
+        "id": "garden-view-resort",
+        "title": "Garden View Resort Website",
+        "shortTitle": "Garden View Resort",
+        "description": "Elegante Website für ein Urlaubshotel zur Präsentation von Suiten, Angeboten und direkten Buchungsanfragen.",
+        "purpose": "Bietet Gästen ein ansprechendes Portal zur Buchungsanfrage und Einsicht aller Hotelannehmlichkeiten.",
+        "problemSolved": "Steigert direkte Buchungsanfragen und vereinfacht den Kontakt für Hotelbetriebe.",
+        "architecture": "React-Frontend gekoppelt an Spring Boot-Dienste und Supabase-Datenbank.",
+        "keyFeatures": [
+          "Interaktiver Zimmerkatalog mit Bildergalerien und Ausstattungslisten",
+          "Buchungsformular mit automatischer Datenvalidierung und Backend-Benachrichtigung",
+          "Anzeige saisonaler Angebote und aktueller Zimmerpreise",
+          "Vollkommen responsives Design auf Smartphones, Tablets und Desktop-PCs"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "station": "06 — KONTAKT",
+    "heading": "GEMEINSAM ETWAS ERSCHAFFEN.",
+    "intro": "Haben Sie eine Frage oder möchten Sie ein Projekt besprechen? Kontaktieren Sie mich direkt über WhatsApp, E-Mail oder LinkedIn. Ich freue mich auf neue Herausforderungen.",
+    "name": "NAME",
+    "namePlaceholder": "Ihr vollständiger Name",
+    "email": "E-MAIL",
+    "emailPlaceholder": "ihre.email@beispiel.de",
+    "message": "NACHRICHT",
+    "messagePlaceholder": "Beschreiben Sie Ihr Anliegen oder Projekt...",
+    "send": "NACHRICHT SENDEN",
+    "sending": "WIRD GESENDET...",
+    "sent": "ÜBERTRAGUNG ABGESCHLOSSEN",
+    "success": "NACHRICHT ERFOLGREICH GESENDET",
+    "error": "FEHLER BEIM SENDEN. BITTE VERSUCHEN SIE ES ERNEUT.",
+    "whatsappLabel": "DIREKT PER WHATSAPP",
+    "resumeLabel": "LEBENSLAUF HERUNTERLADEN",
+    "directChannels": "DIREKTE KANÄLE"
+  },
+  "chatbot": {
+    "title": "ARJUN FRAGEN",
+    "subtitle": "KI-Portfolio-Assistent",
+    "placeholder": "Fragen Sie nach HydraPay, Java, Fähigkeiten..."
+  }
+}

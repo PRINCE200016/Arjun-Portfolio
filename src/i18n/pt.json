@@ -1,0 +1,381 @@
+{
+  "loading": {
+    "title": "ARJUN RAJAWAT",
+    "status": [
+      "INICIALIZANDO AMBIENTE",
+      "CARREGANDO RECURSOS",
+      "CONSTRUINDO CENA",
+      "CONECTANDO SISTEMAS",
+      "PRONTO"
+    ]
+  },
+  "entry": {
+    "name": "ARJUN RAJAWAT",
+    "role": "DESENVOLVEDOR JAVA FULL STACK",
+    "status": "SISTEMA PRONTO",
+    "enter": "ENTRAR NO PORTFÓLIO",
+    "soundOn": "◉ SOM ATIVADO",
+    "soundOff": "◎ ATIVAR SOM",
+    "chooseLang": "ESCOLHER IDIOMA",
+    "selectLang": "Selecione seu idioma preferido",
+    "continue": "CONTINUAR →",
+    "change": "alterar"
+  },
+  "privacy": {
+    "message": "Ao continuar a usar este site, você concorda com a nossa",
+    "policy": "Política de Privacidade",
+    "accept": "ACEITAR"
+  },
+  "nav": {
+    "home": "INÍCIO",
+    "about": "SOBRE",
+    "skills": "SERVIÇOS",
+    "experience": "EXPERIÊNCIA",
+    "projects": "PROJETOS",
+    "contact": "CONTATO",
+    "engineerBadge": "ENGENHEIRO"
+  },
+  "home": {
+    "greeting": "DESENVOLVEDOR JAVA FULL STACK",
+    "roles": [
+      "DESENVOLVEDOR JAVA FULL STACK",
+      "ENGENHEIRO BACKEND",
+      "ENGENHEIRO DE SOFTWARE",
+      "AUTOMAÇÃO EMPRESARIAL"
+    ],
+    "viewProjects": "VER PROJETOS",
+    "downloadResume": "BAIXAR CURRÍCULO",
+    "contactMe": "VAMOS CONSTRUIR ALGO"
+  },
+  "about": {
+    "station": "02 — SOBRE",
+    "heading": "SOBRE MIM",
+    "intellectLabel": "INTELECTO E ARQUITETURA",
+    "bio": "Olá, sou Arjun Rajawat, desenvolvedor Java Full Stack e engenheiro de automação corporativa. Sou especialista na construção de arquiteturas tolerantes a falhas, sistemas no Google Apps Script, microsserviços Spring Boot e camadas de banco de dados robustas com zero perda de dados. Conheça meus projetos neste portfólio ou no meu GitHub.",
+    "tabTimeline": "FORMAÇÃO E JORNADA",
+    "tabSkills": "HABILIDADES E EXPERTISE",
+    "howIBuild": "COMO EU CONSTRUO",
+    "viewFullExperience": "Ver jornada completa",
+    "verifiedCertificate": "Certificado Verificado",
+    "principles": [
+      "Sistemas tolerantes a falhas com zero perda de dados",
+      "Transações ACID e escrituração contábil rigorosa por partidas dobradas",
+      "Arquiteturas orientadas a eventos para alta escalabilidade",
+      "Depuração em produção e otimização contínua de performance",
+      "Código limpo, modular e de fácil manutenção"
+    ],
+    "journey": [
+      {
+        "id": "d-table-experience",
+        "year": "Julho 2026 – Presente",
+        "title": "Desenvolvedor Apps Script",
+        "institution": "D-Table Analytics, Bhopal",
+        "type": "Trabalho",
+        "details": "Construção e manutenção de sistemas corporativos com Google Apps Script, JavaScript, HTML, CSS e APIs do Google Sheets, incluindo RH, controle de ponto, O2D, compras FMS e estoques."
+      },
+      {
+        "id": "full-stack-java-course",
+        "year": "2025",
+        "title": "Curso Desenvolvedor Java Full Stack",
+        "institution": "Plataforma Online",
+        "type": "Treinamento",
+        "details": "Curso completo em desenvolvimento Java corporativo, abordando Spring Boot, APIs REST e integração moderna com frontend."
+      },
+      {
+        "id": "itrainu-training",
+        "year": "Dez 2024",
+        "title": "Treinamento Java Full Stack & Microsserviços",
+        "institution": "iTrainU Technologies, Indore",
+        "type": "Treinamento",
+        "details": "Java corporativo, Spring Boot e microsserviços, premiado com o 'Melhor Projeto' entre mais de 80 participantes."
+      },
+      {
+        "id": "jiwaji-bsc",
+        "year": "2025",
+        "title": "Bacharelado em Ciência da Computação",
+        "institution": "Universidade Jiwaji, Gwalior",
+        "type": "Educação",
+        "details": "Graduação com foco em estruturas de dados, algoritmos, sistemas operacionais e bancos de dados relacionais."
+      },
+      {
+        "id": "12th-grade",
+        "year": "2019",
+        "title": "Ensino Médio (12º Ano)",
+        "institution": "Sadhana Vidya Niketan, Bhind, M.P.",
+        "type": "Educação",
+        "details": "Conclusão do ensino médio com ênfase em Matemática e Ciências (66%)."
+      },
+      {
+        "id": "10th-grade",
+        "year": "2017",
+        "title": "Ensino Fundamental (10º Ano)",
+        "institution": "Scholars Public School, Bhind, M.P.",
+        "type": "Educação",
+        "details": "Desempenho com 7.0 CGPA em exames escolares."
+      }
+    ],
+    "skillCategories": [
+      {
+        "title": "Java e Engenharia Backend",
+        "description": "Stack corporativa e frameworks modernos para processamento de alto volume e estabilidade.",
+        "skills": [
+          "Java 21",
+          "Spring Boot",
+          "Spring MVC",
+          "Hibernate / JPA",
+          "REST API Design",
+          "ACID Transactions",
+          "Idempotency",
+          "Double-Entry Ledger Design",
+          "Transactional Outbox Pattern",
+          "Event-Driven Architecture",
+          "Role-Based Access Control (RBAC)",
+          "SSO & Session Management"
+        ]
+      },
+      {
+        "title": "Google Apps Script e Automação",
+        "description": "Soluções corporativas completas no ecossistema Google para ERPs e processos automatizados.",
+        "skills": [
+          "Google Apps Script",
+          "Google Sheets API",
+          "Apps Script Web Apps",
+          "Triggers & Scheduled Tasks",
+          "HTML Service",
+          "ERP / MIS Dashboards",
+          "Workflow & Approval Automation",
+          "HRMS / O2D / FMS / IMS Systems",
+          "Batch Processing",
+          "Data Migration & Reconciliation"
+        ]
+      },
+      {
+        "title": "Bancos de Dados e Mensageria",
+        "description": "Camadas de persistência relacional, em memória e fluxo contínuo de eventos distribuídos.",
+        "skills": [
+          "PostgreSQL 16",
+          "MySQL",
+          "Redis",
+          "Apache Kafka",
+          "HikariCP Connection Pooling",
+          "Google Sheets as Database",
+          "Query & Index Optimization",
+          "Data Validation & Integrity"
+        ]
+      },
+      {
+        "title": "Performance e Testes",
+        "description": "Testes de estresse, benchmarks de concorrência e garantia de qualidade de ponta a ponta.",
+        "skills": [
+          "K6 Load Testing",
+          "Query & Index Optimization",
+          "Connection Pooling",
+          "Client-side Pagination",
+          "Caching Strategies",
+          "End-to-End Testing & Debugging",
+          "Postman API Testing",
+          "Production Debugging"
+        ]
+      },
+      {
+        "title": "Frontend e Dashboards",
+        "description": "Interfaces reativas elegantes, painéis com métricas dinâmicas e geração de relatórios.",
+        "skills": [
+          "React.js",
+          "JavaScript (ES2022+)",
+          "HTML5 & CSS3",
+          "Responsive UI Design",
+          "Dynamic Dashboards",
+          "KPI Cards & Data Tables",
+          "Skeleton Loaders",
+          "PDF / Excel / CSV Report Generation"
+        ]
+      },
+      {
+        "title": "Competências Profissionais",
+        "description": "Resolução metódica de desafios de engenharia, clareza técnica e entrega contínua.",
+        "skills": [
+          "Requirement Analysis",
+          "Client Communication",
+          "Production Support",
+          "Problem Solving",
+          "Data Structures & Algorithms",
+          "Git & GitHub",
+          "Code Review & Maintainability",
+          "Agile / Iterative Delivery"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "station": "03 — SERVIÇOS",
+    "heading": "SERVIÇOS E CAPACIDADES",
+    "intro": "Como posso agregar valor ao seu projeto? Transformo requisitos técnicos complexos em sistemas seguros e de altíssimo desempenho, seja no backend transacional ou em portais interativos.",
+    "logicLabel": "LÓGICA E PRECISÃO MECÂNICA",
+    "services": [
+      {
+        "title": "Desenvolvimento de APIs",
+        "desc": "Microsserviços RESTful robustos, endpoints Spring Boot, autenticação e fluxos transacionais seguros."
+      },
+      {
+        "title": "Aplicações Web",
+        "desc": "Portais web modernos desenvolvidos com Next.js, React, Tailwind CSS e alta responsividade."
+      },
+      {
+        "title": "Automação Corporativa",
+        "desc": "Google Apps Script, consolidação de ERPs, rotinas automáticas e fluxos sem falhas."
+      },
+      {
+        "title": "DevOps & CI/CD",
+        "desc": "Controle de versão com Git, conteinerização, esteiras automáticas de entrega contínua."
+      },
+      {
+        "title": "Arquitetura de Dados",
+        "desc": "MySQL, PostgreSQL, modelagem relacional, transações ACID e rigor contábil."
+      },
+      {
+        "title": "Computação em Nuvem",
+        "desc": "Infraestrutura escalável no Google Cloud Platform, microsserviços e alta disponibilidade."
+      }
+    ]
+  },
+  "experience": {
+    "station": "04 — EXPERIÊNCIA",
+    "heading": "JORNADA",
+    "bgText": "JORNADA"
+  },
+  "projects": {
+    "station": "05 — PROJETOS",
+    "heading": "PROJETOS DE ENGENHARIA",
+    "intro": "Explore meus principais projetos de software. Eles refletem dedicação técnica, segurança em operações financeiras e padrões avançados de desenvolvimento web.",
+    "detailsBadge": "DETALHES",
+    "projectDetail": "DETALHES DO PROJETO",
+    "purposeProblem": "OBJETIVO E PROBLEMA RESOLVIDO",
+    "architectureLabel": "ARQUITETURA",
+    "keyCapabilities": "PRINCIPAIS CAPACIDADES",
+    "metricsLabel": "MÉTRICAS DE DESEMPENHO",
+    "liveDemo": "DEMONSTRAÇÃO AO VIVO",
+    "viewCode": "VER CÓDIGO",
+    "close": "FECHAR",
+    "items": [
+      {
+        "id": "hydrapay",
+        "title": "HydraPay — Motor de Liquidação Financeira e Razão por Partidas Dobradas",
+        "shortTitle": "HydraPay",
+        "description": "Motor financeiro tolerante a falhas com escrituração estrita por partidas dobradas, idempotência distribuída em 2 níveis e pipeline Outbox + Kafka — testado até 10.482 TPS com 13,4 ms de latência P99.",
+        "purpose": "Prover um livro-razão financeiro com consistência absoluta e zero perda de dados, processando milhares de pagamentos concorrentes sem débitos duplicados.",
+        "problemSolved": "Elimina concorrência desordenada, transações repetidas por instabilidade de rede e deadlocks em bancos de dados sob alta demanda.",
+        "architecture": "Spring Boot, HikariCP, PostgreSQL 16 com restrições de integridade, Redis e mensageria distribuída com Apache Kafka.",
+        "keyFeatures": [
+          "Contabilidade por partidas dobradas garantindo igualdade exata de débitos e créditos",
+          "Idempotência distribuída de 2 camadas (bloqueios Redis SETNX + restrições únicas PostgreSQL)",
+          "Padrão Transactional Outbox integrado ao Kafka para publicação confiável sem perdas",
+          "Bloqueio determinístico pessimista (SELECT FOR UPDATE) ordenado por conta para anular deadlocks",
+          "Bateria de testes distribuídos K6 certificando estabilidade em estresse real"
+        ],
+        "metrics": [
+          {
+            "label": "Vazão",
+            "value": "10.482 TPS"
+          },
+          {
+            "label": "Latência P99",
+            "value": "13,4 ms"
+          },
+          {
+            "label": "Débitos Duplicados",
+            "value": "0 Falhas"
+          },
+          {
+            "label": "Deadlocks em DB",
+            "value": "0 Travamentos"
+          }
+        ]
+      },
+      {
+        "id": "ai-chatbot",
+        "title": "Chatbot com Inteligência Artificial",
+        "shortTitle": "AI Chatbot",
+        "description": "Aplicação completa com comando de voz e texto, integrada a APIs REST para conversação natural com a OpenAI.",
+        "purpose": "Oferecer um assistente conversacional inteligente com suporte a áudio e compreensão contextual.",
+        "problemSolved": "Possibilita consultas por voz com as mãos livres e respostas contínuas de baixa latência.",
+        "architecture": "Frontend em React.js, camada de serviços Spring Boot, banco de dados Supabase e modelo OpenAI.",
+        "keyFeatures": [
+          "Interação dual por voz e texto com fluxo de resposta instantâneo",
+          "Gateway Spring Boot com controle de taxa e proxy protegido de API",
+          "Histórico de conversas persistido com segurança no Supabase",
+          "Interface moderna em React com animação de ondas sonoras em tempo real"
+        ]
+      },
+      {
+        "id": "ai-travel-planner",
+        "title": "Planejador de Viagens Inteligente",
+        "shortTitle": "TripMind AI",
+        "description": "Plataforma web que cria roteiros turísticos personalizados baseados em orçamento, calendário e preferências do usuário.",
+        "purpose": "Ajudar viajantes a elaborarem cronogramas de passeios com projeção orçamentária realista.",
+        "problemSolved": "Reduz o cansaço do planejamento de viagens ao automatizar despesas, estadias e roteiros conforme limitações financeiras.",
+        "architecture": "Serviços em Java e Spring Boot, catálogo persistido no Supabase e interface ágil no cliente.",
+        "keyFeatures": [
+          "Geração de roteiros customizados aos limites exatos de orçamento",
+          "Filtro inteligente de pontos turísticos por localização geográfica",
+          "Detalhamento interativo de custos diários e cronograma",
+          "Design limpo e adaptado perfeitamente para navegação em celulares"
+        ]
+      },
+      {
+        "id": "weather-web",
+        "title": "Aplicativo Web de Previsão do Tempo",
+        "shortTitle": "Weather Web",
+        "description": "Portal meteorológico que fornece informações climáticas em tempo real com carregamento assíncrono e tolerância a erros.",
+        "purpose": "Entregar previsões do tempo, variações de temperatura e índices atmosféricos globais instantaneamente.",
+        "problemSolved": "Permite consultas rápidas sem páginas lentas, tratando falhas de conexão de forma transparente.",
+        "architecture": "Aplicação em JavaScript nativo com integração assíncrona aos dados da OpenWeather.",
+        "keyFeatures": [
+          "Busca por cidades com atualização climática em tempo real",
+          "Consultas assíncronas com tratamento para reconexão automática",
+          "Indicadores visuais de vento, temperatura e umidade",
+          "Respostas ágeis com aproveitamento de cache no navegador"
+        ]
+      },
+      {
+        "id": "garden-view-resort",
+        "title": "Website Garden View Resort",
+        "shortTitle": "Garden View Resort",
+        "description": "Portal de hospitalidade que exibe chalés, acomodações e solicitações de reserva com layout moderno e envolvente.",
+        "purpose": "Oferecer aos hóspedes um canal visual para conhecer suítes e enviar pedidos de hospedagem com facilidade.",
+        "problemSolved": "Aumenta a captação de clientes e organiza o recebimento de contatos para empreendimentos de lazer.",
+        "architecture": "Frontend em React conectado a serviços Spring Boot e banco Supabase.",
+        "keyFeatures": [
+          "Catálogo visual de quartos com galerias e lista de comodidades",
+          "Formulário de reserva com verificação e aviso imediato no backend",
+          "Apresentação de valores vigentes e descontos especiais",
+          "Compatibilidade ampla com smartphones, tablets e computadores"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "station": "06 — CONTATO",
+    "heading": "VAMOS CONSTRUIR ALGO.",
+    "intro": "Tem uma pergunta ou ideia de projeto? Fale diretamente comigo via WhatsApp, E-mail ou LinkedIn. Estou sempre aberto a novas oportunidades.",
+    "name": "NOME",
+    "namePlaceholder": "Seu nome completo",
+    "email": "E-MAIL",
+    "emailPlaceholder": "seu.email@exemplo.com",
+    "message": "MENSAGEM",
+    "messagePlaceholder": "Descreva seu projeto ou sua dúvida...",
+    "send": "ENVIAR MENSAGEM",
+    "sending": "TRANSMITINDO...",
+    "sent": "TRANSMISSÃO CONCLUÍDA",
+    "success": "MENSAGEM ENVIADA COM SUCESSO",
+    "error": "FALHA NO ENVIO. POR FAVOR, TENTE NOVAMENTE.",
+    "whatsappLabel": "WHATSAPP DIRETO",
+    "resumeLabel": "BAIXAR CURRÍCULO",
+    "directChannels": "CANAIS DIRETOS"
+  },
+  "chatbot": {
+    "title": "PERGUNTAR A ARJUN",
+    "subtitle": "Assistente de IA do Portfólio",
+    "placeholder": "Pergunte sobre HydraPay, Java, projetos..."
+  }
+}

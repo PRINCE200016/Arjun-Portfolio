@@ -1,0 +1,381 @@
+{
+  "loading": {
+    "title": "アルジュン・ラジャワット",
+    "status": [
+      "環境を初期化中",
+      "リソースをロード中",
+      "シーンを構築中",
+      "システムを接続中",
+      "準備完了"
+    ]
+  },
+  "entry": {
+    "name": "アルジュン・ラジャワット",
+    "role": "Java フルスタック開発者",
+    "status": "システム準備完了",
+    "enter": "ポートフォリオを見る",
+    "soundOn": "◉ 音声オン",
+    "soundOff": "◎ 音声を有効化",
+    "chooseLang": "言語を選択",
+    "selectLang": "希望する言語を選択してください",
+    "continue": "次へ進む →",
+    "change": "変更"
+  },
+  "privacy": {
+    "message": "本サイトの利用を継続することにより、利用規約および",
+    "policy": "プライバシーポリシーに同意したものとみなされます",
+    "accept": "同意する"
+  },
+  "nav": {
+    "home": "ホーム",
+    "about": "経歴・概要",
+    "skills": "サービス",
+    "experience": "経歴",
+    "projects": "プロジェクト",
+    "contact": "お問い合わせ",
+    "engineerBadge": "エンジニア"
+  },
+  "home": {
+    "greeting": "Java フルスタック開発者",
+    "roles": [
+      "Java フルスタック開発者",
+      "バックエンドエンジニア",
+      "ソフトウェアエンジニア",
+      "エンタープライズ自動化"
+    ],
+    "viewProjects": "プロジェクトを見る",
+    "downloadResume": "履歴書をダウンロード",
+    "contactMe": "プロジェクトを始めましょう"
+  },
+  "about": {
+    "station": "02 — 経歴・概要",
+    "heading": "自己紹介",
+    "intellectLabel": "知性とアーキテクチャ",
+    "bio": "こんにちは。Javaフルスタック開発者およびエンタープライズ自動化エンジニアのアルジュン・ラジャワットです。データ損失ゼロの耐障害性アーキテクチャ、Google Apps Scriptシステム、Spring Bootマイクロサービス、堅牢なデータベース層の構築を専門としています。このポートフォリオまたはGitHubで開発プロジェクトをご覧ください。",
+    "tabTimeline": "学歴と経歴",
+    "tabSkills": "スキルと専門知識",
+    "howIBuild": "開発理念",
+    "viewFullExperience": "すべての経歴を見る",
+    "verifiedCertificate": "認定証明書",
+    "principles": [
+      "データ損失ゼロを実現する耐障害性システム",
+      "ACIDトランザクションと厳格な複式簿記管理",
+      "スケーラビリティのためのイベント駆動型設計",
+      "本番運用のデバッグとパフォーマンス最適化",
+      "クリーンでモジュール化された保守性の高いコード"
+    ],
+    "journey": [
+      {
+        "id": "d-table-experience",
+        "year": "2026年7月 – 現在",
+        "title": "Apps Script 開発者",
+        "institution": "D-Table Analytics, Bhopal",
+        "type": "実務経験",
+        "details": "Google Apps Script、JavaScript、HTML、CSS、Google Sheets APIを活用したエンタープライズ業務アプリの構築と保守。勤怠管理、受注配送管理、購買管理、在庫管理、ERPダッシュボードの開発を担当。"
+      },
+      {
+        "id": "full-stack-java-course",
+        "year": "2025年",
+        "title": "フルスタック Java 開発コース",
+        "institution": "オンライン学習プラットフォーム",
+        "type": "トレーニング",
+        "details": "エンタープライズSpring Boot、REST API設計、最新フロントエンド統合を網羅した包括的な実践コース。"
+      },
+      {
+        "id": "itrainu-training",
+        "year": "2024年12月",
+        "title": "Java フルスタック＆マイクロサービス研修",
+        "institution": "iTrainU Technologies, Indore",
+        "type": "トレーニング",
+        "details": "エンタープライズJava、Spring Boot、マイクロサービス設計の習得。受講生80名以上の中で「最優秀プロジェクト賞」を受賞。"
+      },
+      {
+        "id": "jiwaji-bsc",
+        "year": "2025年",
+        "title": "コンピュータサイエンス学士（B.Sc.）",
+        "institution": "Jiwaji 大学, Gwalior",
+        "type": "学歴",
+        "details": "データ構造、アルゴリズム、OS、データベース理論を中心としたコンピュータサイエンスの学士号取得。"
+      },
+      {
+        "id": "12th-grade",
+        "year": "2019年",
+        "title": "高等中等教育（高校課程）",
+        "institution": "Sadhana Vidya Niketan, Bhind, M.P.",
+        "type": "学歴",
+        "details": "数学・理科専攻で修了（成績66%）。"
+      },
+      {
+        "id": "10th-grade",
+        "year": "2017年",
+        "title": "中等教育（中学校課程）",
+        "institution": "Scholars Public School, Bhind, M.P.",
+        "type": "学歴",
+        "details": "中等教育修了試験にて7.0 CGPAを取得。"
+      }
+    ],
+    "skillCategories": [
+      {
+        "title": "Java ＆ バックエンド開発",
+        "description": "高スループットと耐障害性を支えるエンタープライズ標準スタック。",
+        "skills": [
+          "Java 21",
+          "Spring Boot",
+          "Spring MVC",
+          "Hibernate / JPA",
+          "REST API Design",
+          "ACID Transactions",
+          "Idempotency",
+          "Double-Entry Ledger Design",
+          "Transactional Outbox Pattern",
+          "Event-Driven Architecture",
+          "Role-Based Access Control (RBAC)",
+          "SSO & Session Management"
+        ]
+      },
+      {
+        "title": "Google Apps Script ＆ 業務自動化",
+        "description": "Googleエコシステムを活用したERP、勤怠、承認フローの全自動化開発。",
+        "skills": [
+          "Google Apps Script",
+          "Google Sheets API",
+          "Apps Script Web Apps",
+          "Triggers & Scheduled Tasks",
+          "HTML Service",
+          "ERP / MIS Dashboards",
+          "Workflow & Approval Automation",
+          "HRMS / O2D / FMS / IMS Systems",
+          "Batch Processing",
+          "Data Migration & Reconciliation"
+        ]
+      },
+      {
+        "title": "データベース ＆ メッセージング",
+        "description": "分散システムのためのRDB、インメモリキャッシュ、イベントストリーム。",
+        "skills": [
+          "PostgreSQL 16",
+          "MySQL",
+          "Redis",
+          "Apache Kafka",
+          "HikariCP Connection Pooling",
+          "Google Sheets as Database",
+          "Query & Index Optimization",
+          "Data Validation & Integrity"
+        ]
+      },
+      {
+        "title": "パフォーマンス ＆ 品質テスト",
+        "description": "負荷テスト、並行性検証、エンドツーエンドの品質保証。",
+        "skills": [
+          "K6 Load Testing",
+          "Query & Index Optimization",
+          "Connection Pooling",
+          "Client-side Pagination",
+          "Caching Strategies",
+          "End-to-End Testing & Debugging",
+          "Postman API Testing",
+          "Production Debugging"
+        ]
+      },
+      {
+        "title": "フロントエンド ＆ レポーティング",
+        "description": "モダンなUI、動的分析ダッシュボード、自動帳票レポート生成。",
+        "skills": [
+          "React.js",
+          "JavaScript (ES2022+)",
+          "HTML5 & CSS3",
+          "Responsive UI Design",
+          "Dynamic Dashboards",
+          "KPI Cards & Data Tables",
+          "Skeleton Loaders",
+          "PDF / Excel / CSV Report Generation"
+        ]
+      },
+      {
+        "title": "専門スキル ＆ 協調性",
+        "description": "要件分析、論理的課題解決、本番システム保守運用。",
+        "skills": [
+          "Requirement Analysis",
+          "Client Communication",
+          "Production Support",
+          "Problem Solving",
+          "Data Structures & Algorithms",
+          "Git & GitHub",
+          "Code Review & Maintainability",
+          "Agile / Iterative Delivery"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "station": "03 — サービス",
+    "heading": "提供サービスとスキル",
+    "intro": "どのようなサポートが可能か？開発者として、複雑な要件を信頼性の高いシステムへと具現化します。業務自動化からスケーラブルなAPI設計まで、確かな価値をお届けします。",
+    "logicLabel": "論理と機械的精度",
+    "services": [
+      {
+        "title": "API 開発",
+        "desc": "堅牢なRESTfulマイクロサービス、Spring Bootエンドポイント、認証機能、安全なトランザクション。"
+      },
+      {
+        "title": "Web アプリケーション",
+        "desc": "Next.js、React、Tailwind CSSを用いた高性能でインタラクティブなWebポータル開発。"
+      },
+      {
+        "title": "エンタープライズ自動化",
+        "desc": "Google Apps Script、ERP統合、自動スケジューリングエンジン、データ損失ゼロのワークフロー。"
+      },
+      {
+        "title": "DevOps ＆ CI/CD",
+        "desc": "Gitバージョン管理、コンテナ化デプロイ、パイプライン自動化、継続的インテグレーション。"
+      },
+      {
+        "title": "データベース設計",
+        "desc": "MySQL、PostgreSQL、スキーマ最適化、ACIDトランザクション、厳格なデータ整合性維持。"
+      },
+      {
+        "title": "クラウド ＆ 分散システム",
+        "desc": "耐障害性の高いクラウド運用、Google Cloud Platform、マイクロサービスオーケストレーション。"
+      }
+    ]
+  },
+  "experience": {
+    "station": "04 — 経歴",
+    "heading": "経歴・軌跡",
+    "bgText": "経歴・軌跡"
+  },
+  "projects": {
+    "station": "05 — プロジェクト",
+    "heading": "開発プロジェクト",
+    "intro": "主要なエンジニアリングプロジェクトをご覧ください。フルスタック開発、金融システム、モダンWeb技術への取り組みと実績を反映しています。",
+    "detailsBadge": "詳細を見る",
+    "projectDetail": "プロジェクト詳細",
+    "purposeProblem": "開発目的と解決した課題",
+    "architectureLabel": "アーキテクチャ",
+    "keyCapabilities": "主要機能・特徴",
+    "metricsLabel": "パフォーマンス実績",
+    "liveDemo": "ライブデモ",
+    "viewCode": "コードを見る",
+    "close": "閉じる",
+    "items": [
+      {
+        "id": "hydrapay",
+        "title": "HydraPay — 高スループット金融決済＆複式簿記エンジン",
+        "shortTitle": "HydraPay",
+        "description": "厳格な複式簿記、2層分散べき等性、Outbox + Kafkaパイプラインを備えた耐障害性金融決済エンジン。10,482 TPS、P99レイテンシ13.4msで負荷テスト検証済み。",
+        "purpose": "重複引き落としや競合状態を起こさずに、毎秒数千件の同時決済を安全に処理できるデータ損失ゼロの金融元帳を提供。",
+        "problemSolved": "ネットワーク切断時の二重決済、高負荷時のデッドロック、分散サービス間の通知不整合を完全に排除。",
+        "architecture": "Spring Boot、HikariCP接続プール、PostgreSQL 16整合性制約、Redis高速ロック、Apache Kafka非同期決済。",
+        "keyFeatures": [
+          "毎回のトランザクションで借方と貸方が厳密に一致する複式簿記台帳",
+          "2層分散べき等性レイヤー（Redis SETNX + PostgreSQL一意制約）",
+          "データ損失ゼロのイベント配信を行うTransactional OutboxパターンとKafka統合",
+          "デッドロックを防止する口座ID順の決定論的排他ロック（SELECT FOR UPDATE）",
+          "実環境の並行アクセスを再現した自動K6負荷テストスイート"
+        ],
+        "metrics": [
+          {
+            "label": "スループット",
+            "value": "10,482 TPS"
+          },
+          {
+            "label": "P99 レイテンシ",
+            "value": "13.4 ms"
+          },
+          {
+            "label": "二重引き落とし",
+            "value": "0 件（完全防止）"
+          },
+          {
+            "label": "DB デッドロック",
+            "value": "0 件"
+          }
+        ]
+      },
+      {
+        "id": "ai-chatbot",
+        "title": "マルチモーダル AI チャットボット",
+        "shortTitle": "AI Chatbot",
+        "description": "音声およびテキスト入力に対応し、REST APIを介してOpenAIとシームレスに対話できるフルスタックアプリ。",
+        "purpose": "自然言語処理と音声認識を備えたインタラクティブなAIアシスタントの提供。",
+        "problemSolved": "ハンズフリーの音声検索と高速ストリーミング応答により待ち時間のない自然な会話を実現。",
+        "architecture": "React.jsフロントエンド、Spring Bootバックエンドゲートウェイ、Supabase、OpenAI API。",
+        "keyFeatures": [
+          "音声とテキストのデュアル入力およびリアルタイムストリーミング応答",
+          "レート制限と安全なAPIプロキシを備えたSpring Bootゲートウェイ",
+          "会話履歴の保持とログ管理のためのSupabaseデータベース統合",
+          "リアルタイム音声波形アニメーションを備えた最新React UI"
+        ]
+      },
+      {
+        "id": "ai-travel-planner",
+        "title": "AI 搭載トラベルプランナー",
+        "shortTitle": "TripMind AI",
+        "description": "予算、日数、ユーザーの好みに基づいてパーソナライズされた旅行日程を生成するWebアプリケーション。",
+        "purpose": "旅行者が現実的な費用試算とスケジュールを含む旅程を瞬時に計画できるよう支援。",
+        "problemSolved": "予算計算や宿泊先の選定を自動化し、旅行計画にかかる手間とストレスを大幅に軽減。",
+        "architecture": "観光地データを管理するJava & Spring Boot、Supabaseストレージ、快適なWebフロントエンド。",
+        "keyFeatures": [
+          "指定予算に合わせた最適な旅行プランの自動生成",
+          "地理的クラスタリングによる効率的な観光地フィルタリング",
+          "インタラクティブな費用内訳とタイムラインの視覚化",
+          "スマートフォンでの操作に最適化された直感的なデザイン"
+        ]
+      },
+      {
+        "id": "weather-web",
+        "title": "リアルタイム気象情報アプリ",
+        "shortTitle": "Weather Web",
+        "description": "世界中の最新気象データを取得し、非同期通信と確実なエラー処理を備えた軽量Webアプリケーション。",
+        "purpose": "世界各地の天候、気温、湿度、気圧データを即座に提供。",
+        "problemSolved": "重いページ更新なしで高速に天気を取得し、通信障害時もスムーズに自動回復。",
+        "architecture": "OpenWeather APIと非同期連携する軽量Vanilla JavaScriptアプリケーション。",
+        "keyFeatures": [
+          "都市名入力によるリアルタイム気象および気温レポート",
+          "ネットワークエラーからの自動リカバリを備えた非同期フェッチ",
+          "気温、風速、湿度を分かりやすく表すビジュアルインジケーター",
+          "クライアント側キャッシュによる瞬時の応答性"
+        ]
+      },
+      {
+        "id": "garden-view-resort",
+        "title": "Garden View リゾート公式サイト",
+        "shortTitle": "Garden View Resort",
+        "description": "客室、サービス、予約リクエストを美しく紹介するリゾートホテルのWebサイト。",
+        "purpose": "宿泊客がスイートルームや館内施設を確認し、オンラインで手軽に予約申込を行えるポータルの提供。",
+        "problemSolved": "洗練されたデザインで宿泊客の成約率を高め、予約問い合わせの受付を円滑化。",
+        "architecture": "Reactフロントエンド、Spring Bootバックエンド、Supabaseデータベース連携。",
+        "keyFeatures": [
+          "ギャラリーと設備一覧を備えたインタラクティブな客室カタログ",
+          "入力検証と管理者通知を備えた宿泊予約リクエスト機能",
+          "季節限定プランや最新料金のわかりやすい表示",
+          "PC、タブレット、スマートフォンに完全対応したレスポンシブ設計"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "station": "06 — お問い合わせ",
+    "heading": "新しいプロジェクトを始めましょう。",
+    "intro": "ご質問や開発のご相談がございましたら、WhatsApp、メール、またはLinkedInからお気軽にご連絡ください。新しい機会を歓迎しています。",
+    "name": "お名前",
+    "namePlaceholder": "お名前を入力",
+    "email": "メールアドレス",
+    "emailPlaceholder": "your.email@example.com",
+    "message": "メッセージ",
+    "messagePlaceholder": "ご相談内容やプロジェクトの詳細をご記入ください...",
+    "send": "メッセージを送信",
+    "sending": "送信中...",
+    "sent": "送信完了",
+    "success": "メッセージが正常に送信されました",
+    "error": "送信に失敗しました。もう一度お試しください。",
+    "whatsappLabel": "WhatsApp で直接連絡",
+    "resumeLabel": "履歴書をダウンロード",
+    "directChannels": "直接連絡先"
+  },
+  "chatbot": {
+    "title": "アルジュンに質問",
+    "subtitle": "AI ポートフォリオアシスタント",
+    "placeholder": "HydraPay、Java、開発スキルについて質問..."
+  }
+}
